@@ -1,13 +1,10 @@
-def number_of_evens(numbers):
-    return 0
+def count_upper_case(message):
+    return sum([1 for c in message if c.isupper()])
+    
+assert count_upper_case("") == 0, "empty string"
+assert count_upper_case("A") == 1, "One upper case"
+assert count_upper_case("AA") == 2, "Two upper case"
+assert count_upper_case("a") == 0, "One lower case"
+assert count_upper_case("£$%%^") == 0, "Special characters"
 
-def test_are_equal(actual, expected):
-    assert expected == actual, "expected {0}, got {1}".format(expected, actual)
-    
-def test_not_equal(a,b):
-    assert a != b, "did not expect {0} but got {1}!.format(a, b)"
-    
-def test_is_in(collection, item):
-    assert item in collection, "{0} does not contain {1}".format(collection, item)
-    
-test_are_equal(number_of_evens([1,2,3,4,5]), 2)
+print ("All test passed")
